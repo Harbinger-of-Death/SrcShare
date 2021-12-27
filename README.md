@@ -19,7 +19,7 @@ import { Base } from "./index.js";
 const base = new Base();
 
 (async () => {
-  const code = await base.codes.create({ code: "./path", language: "PYTHON", title: "hello", description: "Awesome", error: "An Error" })
+  const code = await base.codes.create({ code: <CodeResolvable> || "./path", language: "PYTHON", title: "hello", description: "Awesome", error: "An Error" })
   console.log(code) // Expected output: a Code constructor
 })();
 ```
