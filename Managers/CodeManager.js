@@ -20,7 +20,7 @@ class CodeManager {
     }
 
     async create(options = {}) {
-        const code = /^(\.(\.)?)/g.test(options.code) ? fs.readFileSync(options.code)?.toString() : typeof options.code instanceof Buffer ? options.code?.toString() : options.code
+        const code = encodeURIComponent(/^(\.(\.)?)/g.test(options.code) ? fs.readFileSync(options.code)?.toString() : typeof options.code instanceof Buffer ? options.code?.toString() : options.code)
         const error = options.error ?? null
         const language = Languages[options.language] ?? "JAVASCRIPT"
         const title = options.title ? `&title=${options.title}` : ""

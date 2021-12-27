@@ -9,7 +9,7 @@ class Code {
             }
         })
         this.id = data.id ?? null
-        this.code = data?.code ?? null
+        this.code = decodeURIComponent(data.code)
         this.error = data.error ?? null
         this.language = data.language?.toUpperCase() ?? null
         this.description = data.description ?? null
